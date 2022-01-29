@@ -1,12 +1,16 @@
 :root {
+    background-color: var(--background-color);
+
+    --background-color: #ffffff;
     --mask-color: #ffffffd9;
     --brightness: 1.5;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --mask-color: #000000d9;
-        --brightness: 1;
+        --background-color: #202020;
+        --mask-color: #202020d9;
+        --brightness: 1.5;
     }
 }
 
