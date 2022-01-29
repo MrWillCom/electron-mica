@@ -1,0 +1,35 @@
+:root {
+    --mask-color: #ffffffd9;
+    --brightness: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --mask-color: #000000d9;
+        --brightness: 1;
+    }
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+img {
+    position: fixed;
+    left: calc(var(--x) * -1px);
+    top: calc(var(--y) * -1px);
+    width: calc(var(--screen-width) * 1px);
+    height: calc(var(--screen-height) * 1px);
+    filter: blur(96px) saturate(1.2) brightness(var(--brightness));
+    -webkit-app-region: drag;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--mask-color);
+}

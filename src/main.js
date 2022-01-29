@@ -1,5 +1,6 @@
 const electron = require('electron')
 const Store = require('electron-store')
+require('@electron/remote/main').initialize()
 
 class Background {
   constructor() {
@@ -43,6 +44,8 @@ class Background {
     win.loadFile('src/index.html')
 
     win.webContents.openDevTools()
+
+    require("@electron/remote/main").enable(win.webContents)
 
     this.window = win
 
